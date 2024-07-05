@@ -1,27 +1,25 @@
 package main
 
 import (
-	"flag"
-	"github.com/Simnek/web-go/api"
-	"net/http"
+	"github.com/Simnek/web-go/initalize"
 )
 
 func main() {
 
-	//initalize.Initialize()
+	initalize.FastInitialize()
 
-	listenAddr := flag.String("listenaddr", ":8080", "Address for http listening")
-	flag.Parse()
-
-	http.HandleFunc("/user", api.HandleGetUser)
-	http.HandleFunc("/customer", api.HandleGetCustomer)
-	http.HandleFunc("/user/create", api.HandlePostUserWithCORS)
-
-	http.HandleFunc("/", homeHandler)
-	http.HandleFunc("/about", aboutHandler)
-	http.HandleFunc("/contact", contactHandler)
-
-	http.ListenAndServe(*listenAddr, nil)
+	//listenAddr := flag.String("listenaddr", ":8080", "Address for http listening")
+	//flag.Parse()
+	//
+	//http.HandleFunc("/user", api.HandleGetUser)
+	//http.HandleFunc("/customer", api.HandleGetCustomer)
+	//http.HandleFunc("/user/create", api.HandlePostUserWithCORS)
+	//
+	//http.HandleFunc("/", homeHandler)
+	//http.HandleFunc("/about", aboutHandler)
+	//http.HandleFunc("/contact", contactHandler)
+	//
+	//http.ListenAndServe(*listenAddr, nil)
 
 	//err := godotenv.Load()
 	//if err != nil {
@@ -37,5 +35,7 @@ func main() {
 	//case "initialize":
 	//	initalize.Initialize()
 	//}
+
+	//bench.FastFor()
 
 }
